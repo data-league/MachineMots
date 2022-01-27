@@ -16,6 +16,9 @@ def run():
 
     with codecs.open(filepath, "r", "utf-8") as lines:
         for line in lines:
+            line: str
+            if line.startswith("#"):
+                continue
             i = 0
             j = 0
             for k in [ord(c) for c in list(line)]:
